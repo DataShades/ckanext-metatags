@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+
+{% block meta %}
+    {{ super() }}
+
+    {% block social_meta %}
+
+    {% endblock social_meta %}
+
+
+    <meta name="description" content="{{ g.site_description }}" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ self.title() }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:image" content="{{ h.metatags_social_share_image() }}" />
+    <meta property="og:description" content="{{ g.site_description }}" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ self.title() }}">
+    <meta name="twitter:description" content="{{ g.site_description }}">
+    <meta name="twitter:image" content="{{ h.metatags_social_share_image() }}">
+
+{% endblock meta %}
